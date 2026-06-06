@@ -1,0 +1,35 @@
+{
+    "cSpell.words": [
+        "amsmath",
+        "amssymb",
+        "amsthm",
+        "catchfile",
+        "direnv",
+        "fvextra",
+        "latexmk",
+        "Nixos",
+        "nixpkgs",
+        "numtide",
+        "pkgs",
+        "pygments",
+        "texlive",
+        "tikz",
+        "xstring"
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-shell-escape",
+                "%DOC%"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.view.pdf.viewer": "tab"
+}
