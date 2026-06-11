@@ -1,50 +1,35 @@
 {
-  description = "latex env";
+  description = "Typst environment for Formalizing Codensity Transformation with Category Theory";
 
   inputs = {
-    nixpkgs.url = "github:Nixos/nixpkgs/nixos-unstable";
-    utils.url = "github:numtide/flake-utils";
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/nixos-unstable";
+    };
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+    };
   };
 
   outputs =
     {
       self,
       nixpkgs,
-      utils,
+      flake-utils,
     }:
-    utils.lib.eachDefaultSystem (
+    flake-utils.lib.eachDefaultSystem (
       system:
       let
-        pkgs = import nixpkgs { inherit system; };
-
-        latexEnv = pkgs.texlive.combine {
-          inherit (pkgs.texlive)
-            scheme-small
-            latexmk
-            amsmath
-            amsfonts
-            amscls
-            tikz-cd
-            pgf
-            minted
-            fvextra
-            catchfile
-            xstring
-            environ
-            ;
-        };
+        pkgs = nixpkgs.legacyPackages.${system};
       in
       {
         devShells.default = pkgs.mkShell {
           buildInputs = [
-            latexEnv
-            pkgs.which
-            pkgs.python311Packages.pygments
-          ];
+            pkgs.typst
+            pkgs.typstyle
+            pkgs.tinymist
 
-          shellHook = ''
-            echo "entered latex env"
-          '';
+            pkgs.just
+          ];
         };
       }
     );

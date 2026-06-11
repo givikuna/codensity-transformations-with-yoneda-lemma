@@ -1,20 +1,35 @@
 {
     "cSpell.words": [
+        "amscls",
+        "amsfonts",
         "amsmath",
         "amssymb",
         "amsthm",
         "catchfile",
+        "Codensity",
+        "ctheorems",
         "direnv",
         "fvextra",
+        "Givi",
+        "Hask",
+        "Kleisli",
         "latexmk",
+        "nipkgs",
         "Nixos",
         "nixpkgs",
         "numtide",
         "pkgs",
         "pygments",
+        "synctex",
         "texlive",
+        "thmrules",
         "tikz",
-        "xstring"
+        "Tsvariani",
+        "typst",
+        "typstfmt",
+        "typstyle",
+        "xstring",
+        "Yoneda"
     ],
     "latex-workshop.latex.tools": [
         {
